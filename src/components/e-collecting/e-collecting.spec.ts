@@ -1,36 +1,38 @@
 import {newSpecPage} from '@stencil/core/testing';
-import {EEcollecting} from './e-collecting';
 
-describe('my-component', () => {
+import {ECollecting} from './e-collecting';
+
+describe('e-collecting', () => {
   it('renders', async () => {
     const {root} = await newSpecPage({
-      components: [EEcollecting],
-      html: '<my-component></my-component>',
+      components: [ECollecting],
+      html: '<e-collecting></e-collecting>',
     });
     expect(root).toEqualHtml(`
-      <my-component>
+      <e-collecting>
         <mock:shadow-root>
-          <div>
-            Hello, World! I'm
-          </div>
+          <button>
+            <slot>e-Collecting</slot>
+          </button>
         </mock:shadow-root>
-      </my-component>
+      </e-collecting>
     `);
   });
 
-  it('renders with values', async () => {
+  it('renders with custom text', async () => {
     const {root} = await newSpecPage({
-      components: [EEcollecting],
-      html: `<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>`,
+      components: [ECollecting],
+      html: '<e-collecting>Hello World</e-collecting>',
     });
     expect(root).toEqualHtml(`
-      <my-component first="Stencil" last="'Don't call me a framework' JS">
+      <e-collecting>
         <mock:shadow-root>
-          <div>
-            Hello, World! I'm Stencil 'Don't call me a framework' JS
-          </div>
+          <button>
+            <slot>e-Collecting</slot>
+          </button>
         </mock:shadow-root>
-      </my-component>
+        Hello World
+      </e-collecting>
     `);
   });
 });
