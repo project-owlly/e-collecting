@@ -51,7 +51,7 @@ export class ECollecting {
   render() {
     return (
       <Host>
-        <button disabled={this.owlly === undefined} onClick={() => this.navigate()}>
+        <button disabled={this.owlly === undefined} onClick={() => this.navigate()} aria-label={this.owlly ? this.owlly.title : undefined}>
           <slot>e-Collecting</slot>
         </button>
         {this.renderLink()}
@@ -64,6 +64,13 @@ export class ECollecting {
       return undefined;
     }
 
-    return <a ref={(el) => (this.anchor = el as HTMLAnchorElement)} href={`${this.baseUrl}${this.owlly.link}`} target="_blank" rel="noopener noreferrer"></a>;
+    return (
+      <a
+        ref={(el) => (this.anchor = el as HTMLAnchorElement)}
+        href={`${this.baseUrl}${this.owlly.link}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-hidden="true"></a>
+    );
   }
 }

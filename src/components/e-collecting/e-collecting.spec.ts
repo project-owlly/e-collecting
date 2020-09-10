@@ -66,10 +66,10 @@ describe('e-collecting', () => {
     expect(root).toEqualHtml(`
       <e-collecting owlly-id="${owllyId}">
         <mock:shadow-root>
-          <button>
+          <button aria-label="${owllyMock.title}">
             <slot>e-Collecting</slot>
           </button>
-          <a href="https://owly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
+          <a aria-hidden="true" href="https://owly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
         </mock:shadow-root>
       </e-collecting>
     `);
