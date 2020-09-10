@@ -28,4 +28,7 @@ export const config: Config = {
       plugins: [autoprefixer()],
     }),
   ],
+  devServer: {
+    openBrowser: false,
+  },
 };
