@@ -1,11 +1,11 @@
-import { newE2EPage } from '@stencil/core/testing';
+import {newE2EPage} from '@stencil/core/testing';
 
-describe('my-component', () => {
+describe('e-ecollecting', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
     await page.setContent('<my-component></my-component>');
-    const element = await page.find('my-component');
+    const element = await page.find('e-ecollecting');
     expect(element).toHaveClass('hydrated');
   });
 
@@ -13,8 +13,8 @@ describe('my-component', () => {
     const page = await newE2EPage();
 
     await page.setContent('<my-component></my-component>');
-    const component = await page.find('my-component');
-    const element = await page.find('my-component >>> div');
+    const component = await page.find('e-ecollecting');
+    const element = await page.find('e-ecollecting >>> div');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');
