@@ -2,7 +2,7 @@ import {Component, h, Host, Prop, State, Watch} from '@stencil/core';
 
 import {Owlly} from '../types/owlly';
 
-import {initOwlly} from '../utils/utils';
+import {initOwlly} from '../helpers/utils';
 
 @Component({
   tag: 'e-collecting',

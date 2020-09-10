@@ -11,7 +11,7 @@ describe('e-collecting', () => {
     expect(root).toEqualHtml(`
       <e-collecting>
         <mock:shadow-root>
-          <button>
+          <button disabled="">
             <slot>e-Collecting</slot>
           </button>
         </mock:shadow-root>
@@ -27,7 +27,7 @@ describe('e-collecting', () => {
     expect(root).toEqualHtml(`
       <e-collecting>
         <mock:shadow-root>
-          <button>
+          <button disabled="">
             <slot>e-Collecting</slot>
           </button>
         </mock:shadow-root>
