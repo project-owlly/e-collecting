@@ -7,6 +7,9 @@
 import {HTMLStencilElement, JSXBase} from '@stencil/core/internal';
 export namespace Components {
   interface ECollecting {
+    /**
+     * The ID to be provided to Owlly in order to load the initiative and other content for navigation.
+     */
     owllyId: string;
   }
 }
@@ -22,6 +25,9 @@ declare global {
 }
 declare namespace LocalJSX {
   interface ECollecting {
+    /**
+     * The ID to be provided to Owlly in order to load the initiative and other content for navigation.
+     */
     owllyId?: string;
   }
   interface IntrinsicElements {

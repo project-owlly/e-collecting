@@ -12,6 +12,9 @@ import {initOwlly} from '../helpers/utils';
 export class ECollecting {
   // TODO: ID is a reserved word. OwllyId or another idea?
 
+  /**
+   * The ID to be provided to Owlly in order to load the initiative and other content for navigation.
+   */
   @Prop()
   owllyId: string;
 
