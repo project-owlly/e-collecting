@@ -7,6 +7,10 @@ import {Component, h} from '@stencil/core';
 })
 export class ECollecting {
   render() {
-    return <div>Hello, World!</div>;
+    return (
+      <button>
+        <slot>e-Collecting</slot>
+      </button>
+    );
   }
 }
