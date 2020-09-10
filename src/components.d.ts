@@ -6,7 +6,9 @@
  */
 import {HTMLStencilElement, JSXBase} from '@stencil/core/internal';
 export namespace Components {
-  interface ECollecting {}
+  interface ECollecting {
+    owllyId: string;
+  }
 }
 declare global {
   interface HTMLECollectingElement extends Components.ECollecting, HTMLStencilElement {}
@@ -19,7 +21,9 @@ declare global {
   }
 }
 declare namespace LocalJSX {
-  interface ECollecting {}
+  interface ECollecting {
+    owllyId?: string;
+  }
   interface IntrinsicElements {
     'e-collecting': ECollecting;
   }

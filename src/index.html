@@ -11,7 +11,25 @@
   <body>
     <h1>Default text</h1>
 
-    <e-collecting></e-collecting>
+    <e-collecting owlly-id="28c72f42-5daa-4a28-b39d-b51b203c3740"></e-collecting>
+
+    <h2>Owlly Id</h2>
+
+    <div style="display: flex">
+      <input name="owllyId" value="28c72f42-5daa-4a28-b39d-b51b203c3740" />
+
+      <button type="button" onclick="updateOwllyId()">Update</button>
+    </div>
+
+    <script type="text/javascript">
+      function updateOwllyId() {
+        const input = document.querySelector('input:first-of-type');
+        const eCollecting = document.querySelector('e-collecting:first-of-type');
+        if (input && eCollecting) {
+          eCollecting.owllyId = input.value;
+        }
+      }
+    </script>
 
     <h1>Custom text</h1>
 
