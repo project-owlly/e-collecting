@@ -2,7 +2,7 @@ import {Owlly} from '../types/owlly';
 
 // TODO: Should we catch even more the errors or it's ok to display no error and just some stacktrace?
 
-export async function initOwlly(id: string): Promise<Owlly | undefined> {
+export const initOwlly = async (id: string): Promise<Owlly | undefined> => {
   try {
     if (!id || id === undefined || id === '') {
       console.error('Owlly information cannot be retrieved for an undefined id.');
@@ -26,4 +26,4 @@ export async function initOwlly(id: string): Promise<Owlly | undefined> {
     console.error(`Owlly information for Id "${id}" cannot be loaded.`);
     return undefined;
   }
-}
+};
