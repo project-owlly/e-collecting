@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ECollecting {
+        "observerRootMargin": string;
+        "observerThreshold": number | number[];
         /**
           * The ID to be provided to Owlly in order to load the initiative and other content for navigation.
          */
@@ -26,6 +28,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ECollecting {
+        "observerRootMargin"?: string;
+        "observerThreshold"?: number | number[];
         /**
           * The ID to be provided to Owlly in order to load the initiative and other content for navigation.
          */
