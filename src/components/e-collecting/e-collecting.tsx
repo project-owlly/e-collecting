@@ -1,8 +1,8 @@
-import {Component, h, Host, Prop, State, Watch} from '@stencil/core';
+import {Component, h, Host, Prop, State, Watch, Element} from '@stencil/core';
 
 import {Owlly} from '../types/owlly';
 
-import {initOwlly} from '../helpers/utils';
+import {loadOwlly} from '../helpers/utils';
 
 @Component({
   tag: 'e-collecting',
@@ -10,6 +10,8 @@ import {initOwlly} from '../helpers/utils';
   shadow: true,
 })
 export class ECollecting {
+  @Element() el: HTMLElement;
+
   // TODO: ID is a reserved word. OwllyId or another idea?
 
   /**
@@ -18,10 +20,21 @@ export class ECollecting {
   @Prop()
   owllyId: string;
 
+  @Prop()
+  observerRootMargin: string = '100px 0px';
+
+  @Prop()
+  observerThreshold: number | number[];
+
   @State()
   private owlly: Owlly | undefined;
 
+  // TODO: Likewise as fetch config, constant?
+  private baseUrl: string = 'https://owly.ch';
+
   private anchor!: HTMLAnchorElement;
+
+  private observer: IntersectionObserver;
 
   async componentWillLoad() {
     await this.initOwlly();
@@ -33,11 +46,43 @@ export class ECollecting {
   }
 
   private async initOwlly() {
-    this.owlly = await initOwlly(this.owllyId);
+    if (window && 'IntersectionObserver' in window) {
+      await this.deferLoad();
+    } else {
+      await this.load();
+    }
   }
 
-  // TODO: Likewise as fetch config, constant?
-  private baseUrl: string = 'https://owly.ch';
+  private async deferLoad() {
+    this.observer = new IntersectionObserver(this.onIntersection, {
+      rootMargin: this.observerRootMargin,
+      threshold: this.observerThreshold,
+    });
+
+    this.observer.observe(this.el.shadowRoot.host);
+  }
+
+  private onIntersection = async (entries: IntersectionObserverEntry[]) => {
+    if (!entries || entries.length <= 0) {
+      return;
+    }
+
+    await this.handleIntersection(entries[0]);
+  };
+
+  private async handleIntersection(entry: IntersectionObserverEntry) {
+    if (entry.isIntersecting) {
+      if (this.observer) {
+        this.observer.disconnect();
+      }
+
+      await this.load();
+    }
+  }
+
+  private async load() {
+    this.owlly = await loadOwlly(this.owllyId);
+  }
 
   private navigate() {
     if (this.owlly === undefined) {
