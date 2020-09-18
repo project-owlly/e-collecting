@@ -5,11 +5,13 @@ import {Owlly} from '../types/owlly';
 import {loadOwlly} from '../helpers/owlly.utils';
 
 import {translate} from '../helpers/translations.utils';
+import {Logo} from '../styles/logo';
 
 @Component({
   tag: 'e-collecting',
   styleUrl: 'e-collecting.scss',
   shadow: true,
+  assetsDirs: ['assets'],
 })
 export class ECollecting {
   @Element() el: HTMLElement;
@@ -22,14 +24,29 @@ export class ECollecting {
   @Prop()
   owllyId: string;
 
+  /**
+   * Style the button with a dark or light theme?
+   */
+  @Prop({reflect: true})
+  mode: 'dark' | 'light' = 'light';
+
+  /**
+   * IntersectionObserver rootMargin property.
+   */
   @Prop()
   observerRootMargin: string = '100px 0px';
 
+  /**
+   * IntersectionObserver threshold property.
+   */
   @Prop()
   observerThreshold: number | number[];
 
   @State()
   private owlly: Owlly | undefined;
+
+  @State()
+  private logo: boolean = false;
 
   // TODO: Likewise as fetch config, constant?
   private baseUrl: string = 'https://owly.ch';
@@ -84,6 +101,7 @@ export class ECollecting {
 
   private async load() {
     this.owlly = await loadOwlly(this.owllyId);
+    this.logo = true;
   }
 
   private navigate() {
@@ -101,7 +119,9 @@ export class ECollecting {
   render() {
     return (
       <Host>
-        <button disabled={this.owlly === undefined} onClick={() => this.navigate()} aria-label={this.owlly ? this.owlly.title : undefined}>
+        {this.logo ? <Logo mode={this.mode}></Logo> : undefined}
+        <button disabled={this.owlly === undefined} onClick={() => this.navigate()} aria-label={this.owlly ? this.owlly.title : undefined} part="button">
+          <div class="logo" aria-hidden={true} />
           <slot>{translate('sign')}</slot>
         </button>
         {this.renderLink()}
