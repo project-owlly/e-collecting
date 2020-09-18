@@ -27,7 +27,7 @@ const owllyMock: Partial<Owlly> = {
   organisation: 'Initiativkomitee «Sichere Velorouten für Zürich»',
 };
 
-jest.mock('../helpers/utils', () => ({
+jest.mock('../helpers/owlly.utils', () => ({
   loadOwlly: async (id): Promise<Owlly | undefined> => {
     return id
       ? ({
@@ -50,7 +50,7 @@ describe('e-collecting', () => {
       <e-collecting>
         <mock:shadow-root>
           <button disabled="">
-            <slot>e-Collecting</slot>
+            <slot>sign</slot>
           </button>
         </mock:shadow-root>
       </e-collecting>
@@ -66,7 +66,7 @@ describe('e-collecting', () => {
       <e-collecting>
         <mock:shadow-root>
           <button disabled="">
-            <slot>e-Collecting</slot>
+            <slot>sign</slot>
           </button>
         </mock:shadow-root>
         Hello World
@@ -85,7 +85,7 @@ describe('e-collecting', () => {
       <e-collecting owlly-id="${owllyId}">
         <mock:shadow-root>
           <button aria-label="${owllyMock.title}">
-            <slot>e-Collecting</slot>
+            <slot>sign</slot>
           </button>
           <a aria-hidden="true" href="https://owly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
         </mock:shadow-root>

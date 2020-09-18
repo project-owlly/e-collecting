@@ -2,7 +2,9 @@ import {Component, h, Host, Prop, State, Watch, Element} from '@stencil/core';
 
 import {Owlly} from '../types/owlly';
 
-import {loadOwlly} from '../helpers/utils';
+import {loadOwlly} from '../helpers/owlly.utils';
+
+import {translate} from '../helpers/translations.utils';
 
 @Component({
   tag: 'e-collecting',
@@ -100,7 +102,7 @@ export class ECollecting {
     return (
       <Host>
         <button disabled={this.owlly === undefined} onClick={() => this.navigate()} aria-label={this.owlly ? this.owlly.title : undefined}>
-          <slot>e-Collecting</slot>
+          <slot>{translate('sign')}</slot>
         </button>
         {this.renderLink()}
       </Host>
