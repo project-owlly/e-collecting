@@ -57,7 +57,7 @@ describe('e-collecting', () => {
   });
 
   it('renders an enabled button', async () => {
-    const owllyId: string = '28c72f42-5daa-4a28-b39d-b51b203c3740';
+    const owllyId: string = 'mkro4noxKW9CNGE7mGFE';
 
     const {root} = await newSpecPage({
       components: [ECollecting],
