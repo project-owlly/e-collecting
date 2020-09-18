@@ -1,7 +1,55 @@
 :host {
-  display: block;
+  display: inline-block;
 }
 
 a {
   display: none;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: var(--owlly-button-width, inherit);
+  height: var(--owlly-button-height, inherit);
+
+  padding: var(--owlly-button-padding, 8px 16px);
+  margin: var(--owlly-button-margin, 12px 10px);
+
+  border-radius: var(--owlly-button-border-radius, 16px);
+
+  border: none;
+
+  font: inherit;
+  font-weight: var(--owlly-button-font-weight, normal);
+
+  overflow: hidden;
+  position: relative;
+
+  box-shadow: var(--owlly-button-box-shadow, 1px 2px 8px 2px rgba(34, 36, 40, 0.2));
+
+  cursor: pointer;
+}
+
+:host(.dark) {
+  button {
+    background: rgb(0, 176, 226);
+    background: linear-gradient(135deg, rgba(0, 176, 226, 1) 0%, rgba(0, 176, 226, 1) 20%, rgba(151, 187, 115, 1) 100%);
+    color: #000;
+  }
+}
+
+:host(.light) {
+  button {
+    background: #231f20;
+    color: #fff;
+  }
+}
+
+div.logo {
+  margin: 0 4px 0 0;
+
+  width: 16px;
+  height: 16px;
 }
