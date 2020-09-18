@@ -9,9 +9,6 @@ export const Logo: FunctionalComponent<{mode: 'dark' | 'light'}> = ({mode}) => {
   return (
     <style>{`
       div.logo {
-        mask-repeat: no-repeat;
-        mask-position: center;
-
         background-image: url("${image}");
       };
     `}</style>

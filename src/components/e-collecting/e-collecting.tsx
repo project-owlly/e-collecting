@@ -27,7 +27,7 @@ export class ECollecting {
   /**
    * Style the button with a dark or light theme?
    */
-  @Prop()
+  @Prop({reflect: true})
   mode: 'dark' | 'light' = 'light';
 
   /**
@@ -118,7 +118,7 @@ export class ECollecting {
 
   render() {
     return (
-      <Host class={this.mode}>
+      <Host>
         {this.logo ? <Logo mode={this.mode}></Logo> : undefined}
         <button disabled={this.owlly === undefined} onClick={() => this.navigate()} aria-label={this.owlly ? this.owlly.title : undefined} part="button">
           <div class="logo" aria-hidden={true} />

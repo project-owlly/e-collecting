@@ -32,7 +32,7 @@ button {
   cursor: pointer;
 }
 
-:host(.dark) {
+:host([mode="dark"]) {
   button {
     background: rgb(0, 176, 226);
     background: linear-gradient(135deg, rgba(0, 176, 226, 1) 0%, rgba(0, 176, 226, 1) 20%, rgba(151, 187, 115, 1) 100%);
@@ -40,7 +40,7 @@ button {
   }
 }
 
-:host(.light) {
+:host([mode="light"]) {
   button {
     background: #231f20;
     color: #fff;
@@ -52,4 +52,7 @@ div.logo {
 
   width: 16px;
   height: 16px;
+
+  mask-repeat: no-repeat;
+  mask-position: center;
 }

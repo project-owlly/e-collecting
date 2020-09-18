@@ -34,7 +34,7 @@ describe('e-collecting', () => {
     });
 
     await page.setContent('<e-collecting></e-collecting>');
-    const component = await page.find('e-collecting >>> *:first-child');
+    const component = await page.find('e-collecting >>> button');
 
     expect(component.textContent).toEqual(`unterschreiben`);
   });
