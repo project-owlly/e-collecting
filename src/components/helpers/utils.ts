@@ -10,7 +10,7 @@ export const initOwlly = async (id: string): Promise<Owlly | undefined> => {
     }
 
     // TODO: Do we want to hardcode this? Means we have to spread breaking changes if we move the infrastructue...
-    const url: string = 'https://eu-xxxxxxx-owlly-yyyyyyyy.cloudfunctions.net';
+    const url: string = `https://europe-west6-project-owlly.cloudfunctions.net/owlly/${id}`;
 
     const response: Response = await fetch(url);
 
