@@ -41,7 +41,7 @@ jest.mock('../helpers/utils', () => ({
 import {ECollecting} from './e-collecting';
 
 describe('e-collecting', () => {
-  xit('renders', async () => {
+  it('renders', async () => {
     const {root} = await newSpecPage({
       components: [ECollecting],
       html: '<e-collecting></e-collecting>',
@@ -57,7 +57,7 @@ describe('e-collecting', () => {
     `);
   });
 
-  xit('renders with custom text', async () => {
+  it('renders with custom text', async () => {
     const {root} = await newSpecPage({
       components: [ECollecting],
       html: '<e-collecting>Hello World</e-collecting>',
