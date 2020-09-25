@@ -11,7 +11,6 @@ import {Logo} from '../styles/logo';
   tag: 'e-collecting',
   styleUrl: 'e-collecting.scss',
   shadow: true,
-  assetsDirs: ['assets'],
 })
 export class ECollecting {
   @Element() el: HTMLElement;
