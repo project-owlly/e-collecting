@@ -7,11 +7,14 @@ import {loadOwlly} from '../helpers/owlly.utils';
 import {translate} from '../helpers/translations.utils';
 import {Logo} from '../styles/logo';
 
+/**
+ * @slot - A custom text to be displayed in the button. Per default "sign" translated in de, fr, it or en according browser lang.
+ * @part button - The part attribute to access the button
+ */
 @Component({
   tag: 'e-collecting',
   styleUrl: 'e-collecting.scss',
   shadow: true,
-  assetsDirs: ['assets'],
 })
 export class ECollecting {
   @Element() el: HTMLElement;
