@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ECollecting {
+    interface OwllyCollect {
         /**
           * Style the button with a dark or light theme?
          */
@@ -26,18 +26,18 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLECollectingElement extends Components.ECollecting, HTMLStencilElement {
+    interface HTMLOwllyCollectElement extends Components.OwllyCollect, HTMLStencilElement {
     }
-    var HTMLECollectingElement: {
-        prototype: HTMLECollectingElement;
-        new (): HTMLECollectingElement;
+    var HTMLOwllyCollectElement: {
+        prototype: HTMLOwllyCollectElement;
+        new (): HTMLOwllyCollectElement;
     };
     interface HTMLElementTagNameMap {
-        "e-collecting": HTMLECollectingElement;
+        "owlly-collect": HTMLOwllyCollectElement;
     }
 }
 declare namespace LocalJSX {
-    interface ECollecting {
+    interface OwllyCollect {
         /**
           * Style the button with a dark or light theme?
          */
@@ -56,14 +56,14 @@ declare namespace LocalJSX {
         "owllyId"?: string;
     }
     interface IntrinsicElements {
-        "e-collecting": ECollecting;
+        "owlly-collect": OwllyCollect;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "e-collecting": LocalJSX.ECollecting & JSXBase.HTMLAttributes<HTMLECollectingElement>;
+            "owlly-collect": LocalJSX.OwllyCollect & JSXBase.HTMLAttributes<HTMLOwllyCollectElement>;
         }
     }
 }
