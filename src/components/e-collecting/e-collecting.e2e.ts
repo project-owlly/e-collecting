@@ -4,16 +4,16 @@ describe('e-collecting', () => {
   it('renders', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<e-collecting></e-collecting>');
-    const element = await page.find('e-collecting');
+    await page.setContent('<owlly-collect></owlly-collect>');
+    const element = await page.find('owlly-collect');
     expect(element).toHaveClass('hydrated');
   });
 
   it('renders custom text', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<e-collecting>Hello World</e-collecting>');
-    const component = await page.find('e-collecting');
+    await page.setContent('<owlly-collect>Hello World</owlly-collect>');
+    const component = await page.find('owlly-collect');
     expect(component.textContent).toEqual(`Hello World`);
   });
 
@@ -33,8 +33,8 @@ describe('e-collecting', () => {
       });
     });
 
-    await page.setContent('<e-collecting></e-collecting>');
-    const component = await page.find('e-collecting >>> button');
+    await page.setContent('<owlly-collect></owlly-collect>');
+    const component = await page.find('owlly-collect >>> button');
 
     expect(component.textContent).toEqual(`unterschreiben`);
   });

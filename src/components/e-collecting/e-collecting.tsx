@@ -12,7 +12,7 @@ import {Logo} from '../styles/logo';
  * @part button - The part attribute to access the button
  */
 @Component({
-  tag: 'e-collecting',
+  tag: 'owlly-collect',
   styleUrl: 'e-collecting.scss',
   shadow: true,
 })

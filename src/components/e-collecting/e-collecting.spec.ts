@@ -58,11 +58,11 @@ describe('e-collecting', () => {
   it('renders', async () => {
     const {root} = await newSpecPage({
       components: [ECollecting],
-      html: '<e-collecting></e-collecting>',
+      html: '<owlly-collect></owlly-collect>',
     });
 
     expect(root).toEqualHtml(`
-      <e-collecting mode="light">
+      <owlly-collect mode="light">
         <mock:shadow-root>
           ${mockStyleLight}
           <button disabled="" part="button">
@@ -70,17 +70,17 @@ describe('e-collecting', () => {
             <slot>sign</slot>
           </button>
         </mock:shadow-root>
-      </e-collecting>
+      </owlly-collect>
     `);
   });
 
   it('renders with custom text', async () => {
     const {root} = await newSpecPage({
       components: [ECollecting],
-      html: '<e-collecting>Hello World</e-collecting>',
+      html: '<owlly-collect>Hello World</owlly-collect>',
     });
     expect(root).toEqualHtml(`
-      <e-collecting mode="light">
+      <owlly-collect mode="light">
         <mock:shadow-root>
           ${mockStyleLight}
           <button disabled="" part="button">
@@ -89,7 +89,7 @@ describe('e-collecting', () => {
           </button>
         </mock:shadow-root>
         Hello World
-      </e-collecting>
+      </owlly-collect>
     `);
   });
 
@@ -98,10 +98,10 @@ describe('e-collecting', () => {
 
     const {root} = await newSpecPage({
       components: [ECollecting],
-      html: `<e-collecting owlly-id="${owllyId}"></e-collecting>`,
+      html: `<owlly-collect owlly-id="${owllyId}"></owlly-collect>`,
     });
     expect(root).toEqualHtml(`
-      <e-collecting mode="light" owlly-id="${owllyId}">
+      <owlly-collect mode="light" owlly-id="${owllyId}">
         <mock:shadow-root>
           ${mockStyleLight}
           <button aria-label="${owllyMock.title}" part="button">
@@ -110,18 +110,18 @@ describe('e-collecting', () => {
           </button>
           <a aria-hidden="true" href="https://owly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
         </mock:shadow-root>
-      </e-collecting>
+      </owlly-collect>
     `);
   });
 
   it('renders dark mode', async () => {
     const {root} = await newSpecPage({
       components: [ECollecting],
-      html: '<e-collecting mode="dark"></e-collecting>',
+      html: '<owlly-collect mode="dark"></owlly-collect>',
     });
 
     expect(root).toEqualHtml(`
-      <e-collecting mode="dark" mode="dark">
+      <owlly-collect mode="dark" mode="dark">
         <mock:shadow-root>
           ${mockStyleDark}
           <button disabled="" part="button">
@@ -129,7 +129,7 @@ describe('e-collecting', () => {
             <slot>sign</slot>
           </button>
         </mock:shadow-root>
-      </e-collecting>
+      </owlly-collect>
     `);
   });
 });
