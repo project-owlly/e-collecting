@@ -25,7 +25,8 @@
     "build-storybook": "npm run build && build-storybook -s dist/ -o docs/"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
+    "@stencil/core": "^2.0.1",
+    "@storybook/addon-knobs": "^6.0.22"
   },
   "license": "MIT",
   "devDependencies": {
