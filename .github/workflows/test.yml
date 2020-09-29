@@ -1,4 +1,4 @@
-name: CI - Test suite
+name: Test suite
 
 on:
   push:
