@@ -30,11 +30,6 @@ export const loadOwlly = async (id: string): Promise<Owlly | undefined> => {
 
 export function injectCSS(id: string, src: string): Promise<string> {
   return new Promise<string>((resolve, reject) => {
-    if (!document) {
-      resolve();
-      return;
-    }
-
     if (document.getElementById(id)) {
       resolve('CSS already loaded.');
       return;
