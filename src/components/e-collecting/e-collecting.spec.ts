@@ -38,6 +38,7 @@ jest.mock('../helpers/owlly.utils', () => ({
         } as Owlly)
       : undefined;
   },
+  injectCSS: async (_id: string, _src: string): Promise<string> => 'Done.',
 }));
 
 const mockStyleLight: string = `<style>
