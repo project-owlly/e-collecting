@@ -11,19 +11,60 @@ button {
   justify-content: center;
   align-items: center;
 
+  /**
+    * @prop --owlly-button-width: Button width
+    * @default inherit
+    */
   width: var(--owlly-button-width, inherit);
+
+  /**
+    * @prop --owlly-button-height: Button height
+    * @default 40px
+    */
   height: var(--owlly-button-height, 40px);
 
+  /**
+    * @prop --owlly-button-padding: Button padding
+    * @default 8px 12px 8px 8px
+    */
   padding: var(--owlly-button-padding, 8px 12px 8px 8px);
+
+  /**
+    * @prop --owlly-button-margin: Button margin
+    * @default 12px 10px
+    */
   margin: var(--owlly-button-margin, 12px 10px);
 
+  /**
+    * @prop --owlly-button-border-radius: Button border radius
+    * @default 8px
+    */
   border-radius: var(--owlly-button-border-radius, 8px);
 
   border: none;
 
-  font-family: var(--owlly-button-font-familly, "Lato", sans-serif);
+  /**
+    * @prop --owlly-button-google-font-family: Button font family provided by Google. As for the content, lazy loaded.
+    * @default "Lato", sans-serif
+    */
+  font-family: var(--owlly-button-google-font-familly, "Lato", sans-serif);
+
+  /**
+    * @prop --owlly-button-font-weight: Button font weight
+    * @default 700
+    */
   font-weight: var(--owlly-button-font-weight, 700);
+
+  /**
+    * @prop --owlly-button-font-size: Button font size
+    * @default 1em
+    */
   font-size: var(--owlly-button-font-size, 1em);
+
+  /**
+    * @prop --owlly-button-line-height: Button line height
+    * @default 1.4em
+    */
   line-height: var(--owlly-button-line-height, 1.4em);
 
   overflow: hidden;
