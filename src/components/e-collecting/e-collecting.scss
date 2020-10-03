@@ -34,7 +34,7 @@ button {
 :host([mode="dark"]) {
   button {
     background: rgb(0, 176, 226);
-    background: linear-gradient(135deg, rgba(0, 176, 226, 1) 0%, rgba(0, 176, 226, 1) 20%, rgba(151, 187, 115, 1) 100%);
+    background: linear-gradient(90deg, #00a5d6 0%, #06a7cf 13%, #18abbc 32%, #36b39c 55%, #5fbe70 80%, #81c74b 100%);
     color: #fff;
   }
 }
