@@ -21,9 +21,10 @@ button {
 
   border: none;
 
-  font-family: inherit;
-  font-weight: var(--owlly-button-font-weight, normal);
+  font-family: var(--owlly-button-font-familly, "Lato", sans-serif);
+  font-weight: var(--owlly-button-font-weight, 700);
   font-size: var(--owlly-button-font-size, 1em);
+  line-height: var(--owlly-button-line-height, 1.4em);
 
   overflow: hidden;
   position: relative;
