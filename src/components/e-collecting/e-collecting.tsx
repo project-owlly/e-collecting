@@ -2,7 +2,7 @@ import {Component, h, Host, Prop, State, Watch, Element} from '@stencil/core';
 
 import {Owlly} from '../types/owlly';
 
-import {loadOwlly} from '../helpers/owlly.utils';
+import {injectCSS, loadOwlly} from '../helpers/owlly.utils';
 
 import {translate} from '../helpers/translations.utils';
 import {Logo} from '../styles/logo';
@@ -103,8 +103,17 @@ export class ECollecting {
   }
 
   private async load() {
-    this.owlly = await loadOwlly(this.owllyId);
+    await Promise.all([this.loadOwlly(), this.loadGoogleFont()]);
+
     this.logo = true;
+  }
+
+  private async loadOwlly() {
+    this.owlly = await loadOwlly(this.owllyId);
+  }
+
+  private async loadGoogleFont() {
+    await injectCSS('owlly-font-lato', 'https://fonts.googleapis.com/css?display=swap&family=Lato:wght@700');
   }
 
   private navigate() {

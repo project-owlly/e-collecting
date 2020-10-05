@@ -11,23 +11,64 @@ button {
   justify-content: center;
   align-items: center;
 
+  /**
+    * @prop --owlly-button-width: Button width
+    * @default inherit
+    */
   width: var(--owlly-button-width, inherit);
-  height: var(--owlly-button-height, inherit);
 
-  padding: var(--owlly-button-padding, 8px 16px);
+  /**
+    * @prop --owlly-button-height: Button height
+    * @default 40px
+    */
+  height: var(--owlly-button-height, 40px);
+
+  /**
+    * @prop --owlly-button-padding: Button padding
+    * @default 8px 12px 8px 8px
+    */
+  padding: var(--owlly-button-padding, 8px 12px 8px 8px);
+
+  /**
+    * @prop --owlly-button-margin: Button margin
+    * @default 12px 10px
+    */
   margin: var(--owlly-button-margin, 12px 10px);
 
-  border-radius: var(--owlly-button-border-radius, 16px);
+  /**
+    * @prop --owlly-button-border-radius: Button border radius
+    * @default 8px
+    */
+  border-radius: var(--owlly-button-border-radius, 8px);
 
   border: none;
 
-  font: inherit;
-  font-weight: var(--owlly-button-font-weight, normal);
+  /**
+    * @prop --owlly-button-google-font-family: Button font family provided by Google. As for the content, lazy loaded.
+    * @default "Lato", sans-serif
+    */
+  font-family: var(--owlly-button-google-font-familly, "Lato", sans-serif);
+
+  /**
+    * @prop --owlly-button-font-weight: Button font weight
+    * @default 700
+    */
+  font-weight: var(--owlly-button-font-weight, 700);
+
+  /**
+    * @prop --owlly-button-font-size: Button font size
+    * @default 1em
+    */
+  font-size: var(--owlly-button-font-size, 1em);
+
+  /**
+    * @prop --owlly-button-line-height: Button line height
+    * @default 1.4em
+    */
+  line-height: var(--owlly-button-line-height, 1.4em);
 
   overflow: hidden;
   position: relative;
-
-  box-shadow: var(--owlly-button-box-shadow, 1px 2px 8px 2px rgba(34, 36, 40, 0.2));
 
   cursor: pointer;
 }
@@ -35,8 +76,8 @@ button {
 :host([mode="dark"]) {
   button {
     background: rgb(0, 176, 226);
-    background: linear-gradient(135deg, rgba(0, 176, 226, 1) 0%, rgba(0, 176, 226, 1) 20%, rgba(151, 187, 115, 1) 100%);
-    color: #000;
+    background: linear-gradient(90deg, #00a5d6 0%, #06a7cf 13%, #18abbc 32%, #36b39c 55%, #5fbe70 80%, #81c74b 100%);
+    color: #fff;
   }
 }
 
@@ -48,10 +89,10 @@ button {
 }
 
 div.logo {
-  margin: 0 4px 0 0;
+  margin: 0 8px 0 0;
 
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
 
   mask-repeat: no-repeat;
   mask-position: center;
