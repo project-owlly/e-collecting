@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "docs",
+    "site": "project-owlly-storybook",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
