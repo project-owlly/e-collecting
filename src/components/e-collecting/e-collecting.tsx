@@ -52,7 +52,7 @@ export class ECollecting {
   private logo: boolean = false;
 
   // TODO: Likewise as fetch config, constant?
-  private baseUrl: string = 'https://owly.ch';
+  private baseUrl: string = 'https://owlly.ch';
 
   private anchor!: HTMLAnchorElement;
 

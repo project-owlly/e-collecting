@@ -111,7 +111,7 @@ describe('e-collecting', () => {
             <div aria-hidden="" class="logo"></div>
             <slot>sign</slot>
           </button>
-          <a aria-hidden="true" href="https://owly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
+          <a aria-hidden="true" href="https://owlly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
         </mock:shadow-root>
       </owlly-collect>
     `);
