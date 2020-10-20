@@ -2,7 +2,7 @@ import docs from './e-collecting.mdx';
 import {withKnobs, text, select} from '@storybook/addon-knobs';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/E-Collecting Button',
   parameters: {
     docs: {
       page: docs,
@@ -11,10 +11,10 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Collect = () => {
-  const owllyId = text('Owlly ID', '');
+export const Button = () => {
+  const owllyId = text('Owlly ID', 'vrrYZoolx2XSy23RW63f');
 
-  const content = text('Custom text', '');
+  const content = text('Custom text', 'unterschreiben');
 
   const modeOptions = {
     Dark: 'dark',
@@ -23,6 +23,6 @@ export const Collect = () => {
   const mode = select('Mode', modeOptions, 'dark');
 
   return `
-  <owlly-collect owllyId="${owllyId}" mode="${mode}" owlly-id="mkro4noxKW9CNGE7mGFE">${content}</owlly-collect>
+  <owlly-collect owllyId="${owllyId}" mode="${mode}" owlly-id="vrrYZoolx2XSy23RW63f">${content}</owlly-collect>
 `;
 };

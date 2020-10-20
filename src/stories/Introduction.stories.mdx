@@ -112,18 +112,31 @@ import LinkTo from '@storybook/addon-links/react';
 
 `}</style>
 
-# Welcome to Owlly
+# Welcome to owlly
 
-Easily collecting - open source democracy made in switzerland 🇨🇭.
+Enabling digital democracy.
+owlly enables the secure and easy electronic signing, validation and counting of popular initiatives and referendums for campaign platforms and offers a holistic e-collecting approach for Switzerland.
 
 <div class="subheading">Getting Started</div>
+
+<div class="link-list">
+  <LinkTo className="link-item" kind="components-button--collect" style={{textDecoration: 'none'}}>
+    <img src={Repo} alt="repo" />
+    <span>
+      <strong>owlly documentation</strong>
+      Learn how to integrate owlly on your campaigning website!
+    </span>
+  </LinkTo>
+</div>
+
+<div class="subheading">Other resources</div>
 
 <div class="link-list">
   <a class="link-item" href="https://owlly.ch" target="_blank" rel="noopener noreferrer">
     <img src={OwllyLogo} alt="Owlly logo" />
     <span>
-      <strong>Owlly</strong>
-      Easy collecting platform
+      <strong>owlly</strong>
+      Enabling digital democracy - Project website
     </span>
   </a>
   <a class="link-item" href="https://github.com/project-owlly" target="_blank" rel="noopener noreferrer">
@@ -133,16 +146,4 @@ Easily collecting - open source democracy made in switzerland 🇨🇭.
       View the source, report issues and submit features
     </span>
   </a>
-</div>
-
-<div class="subheading">Learn</div>
-
-<div class="link-list">
-  <LinkTo className="link-item" kind="components-button--collect" style={{textDecoration: 'none'}}>
-    <img src={Repo} alt="repo" />
-    <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
-    </span>
-  </LinkTo>
 </div>
