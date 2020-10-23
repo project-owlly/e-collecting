@@ -6,6 +6,17 @@
 
 **owlly** enables the secure and easy electronic signing, validation and counting of popular initiatives and referendums for campaign platforms and offers a holistic e-collecting approach for Switzerland.
 
+This repository is all about the E-Collecting Button!
+
+### E-Collecting Button
+
+This buttons is used by campaigners. To enable e-collecting, supported by owlly, simply add this line of code to your website:
+`<owlly-collect owlly-id="mkro4noxKW9CNGE7mGFE" mode="dark"></owlly-collect>`
+
+## Other owlly repositories
+
+**owlly** is a set of different repositories. Each for a specific purpose.
+
 ### Site
 
 This is the **owlly** website.
@@ -13,10 +24,6 @@ This is the **owlly** website.
 ### Cloud
 
 Here we have the **magic** of owlly.
-
-### E-Collecting Button
-
-This buttons is used by campaigners to enable e-collecting
 
 ### Signature Button
 
