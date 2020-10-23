@@ -81,11 +81,25 @@ button {
   }
 }
 
+:host([mode="dark"]) button:active slot {
+  color: black;
+  display: block;
+}
+
 :host([mode="light"]) {
   button {
     background: #231f20;
     color: #fff;
   }
+}
+
+:host([mode="light"]) button:active slot {
+  background: linear-gradient(90deg, #00a5d6 0%, #06a7cf 13%, #18abbc 32%, #36b39c 55%, #5fbe70 80%, #81c74b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  display: block;
 }
 
 div.logo {
