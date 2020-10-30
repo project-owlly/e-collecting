@@ -54,7 +54,7 @@ defineCustomElements();
 For a bare minimum usage, provide the **owlly-id** as parameter, the component takes care of the rest.
 
 ```html
-<owlly-collect owlly-id="mkro4noxKW9CNGE7mGFE"></owlly-collect>
+<owlly-collect owlly-id="vrrYZoolx2XSy23RW63f"></owlly-collect>
 ```
 
 <!-- Auto Generated Below -->
