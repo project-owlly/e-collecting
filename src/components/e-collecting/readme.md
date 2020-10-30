@@ -1,5 +1,62 @@
 # e-collecting
 
+Integrate easily Owlly to your websites and applications with the help of this e-collecting button.
+
+## Table of contents
+
+- [Installation](#installation)
+  - [From a CDN](#from-a-cdn)
+  - [From NPM](#from-npm)
+- [Integration](#integration)
+  - [Import](#import)
+  - [Loader](#loader)
+- [Usage](#usage)
+- [Properties](#properties)
+- [Slots](#slots)
+- [Shadow Parts](#shadow-parts)
+- [CSS Custom Properties](#css-custom-properties)
+
+## Installation
+
+The **e-collecting** button can be added to your application using following methods.
+
+### From a CDN
+
+```html
+<script type="module" src="https://unpkg.com/@owlly/e-collecting@latest/dist/e-collecting/e-collecting.esm.js"></script>
+```
+
+### From NPM
+
+```bash
+npm install @owlly/e-collecting
+```
+
+## Integration
+
+To integrate the button, you can either `import` or `load` it. Pick the method which works best for your application's bundler.
+
+#### Import
+
+```
+import '@owlly/e-collecting';
+```
+
+#### Loader
+
+```
+import { defineCustomElements } from '@owlly/e-collecting/loader';
+defineCustomElements();
+```
+
+## Usage
+
+For a bare minimum usage, provide the **owlly-id** as parameter, the component takes care of the rest.
+
+```html
+<owlly-collect owlly-id="vrrYZoolx2XSy23RW63f"></owlly-collect>
+```
+
 <!-- Auto Generated Below -->
 
 
