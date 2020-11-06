@@ -23,6 +23,7 @@ global.IntersectionObserver = class IntersectionObserver {
 import {Owlly} from '../types/owlly';
 
 const owllyMock: Partial<Owlly> = {
+  id: 'mkro4noxKW9CNGE7mGFE',
   title: 'Sichere Velorouten für Zürich',
   description: 'Mehr als die Hälfte der Velofahrenden gibt an, dass sie sich im Strassenverkehr häufig unsicher fühlen.',
   link: `/initiative/sichere-velorouten-fuer-zuerich`,
@@ -111,7 +112,7 @@ describe('e-collecting', () => {
             <div aria-hidden="" class="logo"></div>
             <slot>sign</slot>
           </button>
-          <a aria-hidden="true" href="https://owlly.ch${owllyMock.link}" rel="noopener noreferrer" target="_blank"></a>
+          <a aria-hidden="true" href="https://owlly.ch/start/${owllyMock.id}" rel="noopener noreferrer" target="_blank"></a>
         </mock:shadow-root>
       </owlly-collect>
     `);

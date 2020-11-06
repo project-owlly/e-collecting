@@ -52,7 +52,7 @@ export class ECollecting {
   private logo: boolean = false;
 
   // TODO: Likewise as fetch config, constant?
-  private baseUrl: string = 'https://owlly.ch';
+  private baseUrl: string = 'https://owlly.ch/start/';
 
   private anchor!: HTMLAnchorElement;
 
@@ -149,7 +149,7 @@ export class ECollecting {
     return (
       <a
         ref={(el) => (this.anchor = el as HTMLAnchorElement)}
-        href={`${this.baseUrl}${this.owlly.link}`}
+        href={`${this.baseUrl}${this.owlly.id}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-hidden="true"></a>
