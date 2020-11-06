@@ -37,13 +37,13 @@ export class ECollecting {
    * IntersectionObserver rootMargin property.
    */
   @Prop()
-  observerRootMargin: string = '100px 0px';
+  observerRootMargin: string = '640px 0px';
 
   /**
    * IntersectionObserver threshold property.
    */
   @Prop()
-  observerThreshold: number | number[];
+  observerThreshold: number | number[] = 0.25;
 
   @State()
   private owlly: Owlly | undefined;
