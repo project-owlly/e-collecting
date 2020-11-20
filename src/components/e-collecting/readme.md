@@ -65,8 +65,8 @@ For a bare minimum usage, provide the **owlly-id** as parameter, the component t
 | Property             | Attribute              | Description                                                                                      | Type                 | Default       |
 | -------------------- | ---------------------- | ------------------------------------------------------------------------------------------------ | -------------------- | ------------- |
 | `mode`               | `mode`                 | Style the button with a dark or light theme?                                                     | `"dark" \| "light"`  | `'light'`     |
-| `observerRootMargin` | `observer-root-margin` | IntersectionObserver rootMargin property.                                                        | `string`             | `'100px 0px'` |
-| `observerThreshold`  | `observer-threshold`   | IntersectionObserver threshold property.                                                         | `number \| number[]` | `undefined`   |
+| `observerRootMargin` | `observer-root-margin` | IntersectionObserver rootMargin property.                                                        | `string`             | `'640px 0px'` |
+| `observerThreshold`  | `observer-threshold`   | IntersectionObserver threshold property.                                                         | `number \| number[]` | `0.25`        |
 | `owllyId`            | `owlly-id`             | The ID to be provided to Owlly in order to load the initiative and other content for navigation. | `string`             | `undefined`   |
 
 
