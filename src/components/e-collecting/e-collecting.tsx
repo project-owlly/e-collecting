@@ -1,8 +1,6 @@
 import {Component, h, Host, Prop, State, Watch, Element} from '@stencil/core';
 
-import {Owlly} from '../types/owlly';
-
-import {injectCSS, loadOwlly} from '../helpers/owlly.utils';
+import {injectCSS} from '../helpers/owlly.utils';
 
 import {translate} from '../helpers/translations.utils';
 import {Logo} from '../styles/logo';
@@ -18,8 +16,6 @@ import {Logo} from '../styles/logo';
 })
 export class ECollecting {
   @Element() el: HTMLElement;
-
-  // TODO: ID is a reserved word. OwllyId or another idea?
 
   /**
    * The ID to be provided to Owlly in order to load the initiative and other content for navigation.
@@ -44,9 +40,6 @@ export class ECollecting {
    */
   @Prop()
   observerThreshold: number | number[] = 0.25;
-
-  @State()
-  private owlly: Owlly | undefined;
 
   @State()
   private logo: boolean = false;
@@ -103,13 +96,9 @@ export class ECollecting {
   }
 
   private async load() {
-    await Promise.all([this.loadOwlly(), this.loadGoogleFont()]);
+    await this.loadGoogleFont();
 
     this.logo = true;
-  }
-
-  private async loadOwlly() {
-    this.owlly = await loadOwlly(this.owllyId);
   }
 
   private async loadGoogleFont() {
@@ -117,7 +106,7 @@ export class ECollecting {
   }
 
   private navigate() {
-    if (this.owlly === undefined) {
+    if (this.owllyId === undefined) {
       return;
     }
 
@@ -132,7 +121,7 @@ export class ECollecting {
     return (
       <Host>
         {this.logo ? <Logo mode={this.mode}></Logo> : undefined}
-        <button disabled={this.owlly === undefined} onClick={() => this.navigate()} aria-label={this.owlly ? this.owlly.title : undefined} part="button">
+        <button disabled={this.owllyId === undefined} onClick={() => this.navigate()} aria-label={translate('sign')} part="button">
           <div class="logo" aria-hidden={true} />
           <slot>{translate('sign')}</slot>
         </button>
@@ -142,14 +131,14 @@ export class ECollecting {
   }
 
   private renderLink() {
-    if (this.owlly === undefined) {
+    if (this.owllyId === undefined) {
       return undefined;
     }
 
     return (
       <a
         ref={(el) => (this.anchor = el as HTMLAnchorElement)}
-        href={`${this.baseUrl}${this.owlly.id}`}
+        href={`${this.baseUrl}${this.owllyId}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-hidden="true"></a>

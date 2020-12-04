@@ -20,25 +20,7 @@ global.IntersectionObserver = class IntersectionObserver {
   }
 };
 
-import {Owlly} from '../types/owlly';
-
-const owllyMock: Partial<Owlly> = {
-  id: 'mkro4noxKW9CNGE7mGFE',
-  title: 'Sichere Velorouten für Zürich',
-  description: 'Mehr als die Hälfte der Velofahrenden gibt an, dass sie sich im Strassenverkehr häufig unsicher fühlen.',
-  link: `/initiative/sichere-velorouten-fuer-zuerich`,
-  organisation: 'Initiativkomitee «Sichere Velorouten für Zürich»',
-};
-
 jest.mock('../helpers/owlly.utils', () => ({
-  loadOwlly: async (id): Promise<Owlly | undefined> => {
-    return id
-      ? ({
-          id: `${id}`,
-          ...owllyMock,
-        } as Owlly)
-      : undefined;
-  },
   injectCSS: async (_id: string, _src: string): Promise<string> => 'Done.',
 }));
 
@@ -69,7 +51,7 @@ describe('e-collecting', () => {
       <owlly-collect mode="light">
         <mock:shadow-root>
           ${mockStyleLight}
-          <button disabled="" part="button">
+          <button aria-label="sign" disabled="" part="button">
             <div aria-hidden="" class="logo"></div>
             <slot>sign</slot>
           </button>
@@ -87,7 +69,7 @@ describe('e-collecting', () => {
       <owlly-collect mode="light">
         <mock:shadow-root>
           ${mockStyleLight}
-          <button disabled="" part="button">
+          <button aria-label="sign" disabled="" part="button">
             <div aria-hidden="" class="logo"></div>
             <slot>sign</slot>
           </button>
@@ -108,11 +90,11 @@ describe('e-collecting', () => {
       <owlly-collect mode="light" owlly-id="${owllyId}">
         <mock:shadow-root>
           ${mockStyleLight}
-          <button aria-label="${owllyMock.title}" part="button">
+          <button aria-label="sign" part="button">
             <div aria-hidden="" class="logo"></div>
             <slot>sign</slot>
           </button>
-          <a aria-hidden="true" href="https://owlly.ch/start/${owllyMock.id}" rel="noopener noreferrer" target="_blank"></a>
+          <a aria-hidden="true" href="https://owlly.ch/start/${owllyId}" rel="noopener noreferrer" target="_blank"></a>
         </mock:shadow-root>
       </owlly-collect>
     `);
@@ -128,7 +110,7 @@ describe('e-collecting', () => {
       <owlly-collect mode="dark" mode="dark">
         <mock:shadow-root>
           ${mockStyleDark}
-          <button disabled="" part="button">
+          <button aria-label="sign" disabled="" part="button">
             <div aria-hidden="" class="logo"></div>
             <slot>sign</slot>
           </button>
