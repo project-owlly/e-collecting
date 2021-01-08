@@ -53,8 +53,9 @@ function getBrowserLang(): string | undefined {
   return browserLang;
 }
 
-const lang: string | undefined = getBrowserLang();
+const browserLang: string | undefined = getBrowserLang();
 
-export function translate(key: string): string {
+export function translate(key: string, customLang?: 'de' | 'fr' | 'it' | 'en'): string {
+  const lang: string | undefined = customLang || browserLang;
   return TRANSLATIONS[lang !== undefined && SUPPORTED_LANGUAGES.indexOf(lang) > -1 ? lang : DEFAULT_LANGUAGE][key];
 }

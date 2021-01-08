@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface OwllyCollect {
         /**
+          * The browser lang is used per default. Use this option to overwrite the automatic detection and use the language you would like to use.
+         */
+        "customLang": 'de' | 'fr' | 'it' | 'en';
+        /**
           * Style the button with a dark or light theme?
          */
         "mode": 'dark' | 'light';
@@ -38,6 +42,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface OwllyCollect {
+        /**
+          * The browser lang is used per default. Use this option to overwrite the automatic detection and use the language you would like to use.
+         */
+        "customLang"?: 'de' | 'fr' | 'it' | 'en';
         /**
           * Style the button with a dark or light theme?
          */
