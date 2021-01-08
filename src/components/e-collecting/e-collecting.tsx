@@ -24,6 +24,12 @@ export class ECollecting {
   owllyId: string;
 
   /**
+   * The browser lang is used per default. Use this option to overwrite the automatic detection and use the language you would like to use.
+   */
+  @Prop()
+  customLang: 'de' | 'fr' | 'it' | 'en';
+
+  /**
    * Style the button with a dark or light theme?
    */
   @Prop({reflect: true})
@@ -121,9 +127,9 @@ export class ECollecting {
     return (
       <Host>
         {this.logo ? <Logo mode={this.mode}></Logo> : undefined}
-        <button disabled={this.owllyId === undefined} onClick={() => this.navigate()} aria-label={translate('sign')} part="button">
+        <button disabled={this.owllyId === undefined} onClick={() => this.navigate()} aria-label={translate('sign', this.customLang)} part="button">
           <div class="logo" aria-hidden={true} />
-          <slot>{translate('sign')}</slot>
+          <slot>{translate('sign', this.customLang)}</slot>
         </button>
         {this.renderLink()}
       </Host>

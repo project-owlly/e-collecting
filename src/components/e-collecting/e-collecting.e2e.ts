@@ -38,4 +38,13 @@ describe('e-collecting', () => {
 
     expect(component.textContent).toEqual(`unterschreiben`);
   });
+
+  it('should translate with custom language', async () => {
+    const page = await newE2EPage();
+
+    await page.setContent('<owlly-collect custom-lang="it"></owlly-collect>');
+    const component = await page.find('owlly-collect >>> button');
+
+    expect(component.textContent).toEqual(`firmare`);
+  });
 });

@@ -62,12 +62,13 @@ For a bare minimum usage, provide the **owlly-id** as parameter, the component t
 
 ## Properties
 
-| Property             | Attribute              | Description                                                                                      | Type                 | Default       |
-| -------------------- | ---------------------- | ------------------------------------------------------------------------------------------------ | -------------------- | ------------- |
-| `mode`               | `mode`                 | Style the button with a dark or light theme?                                                     | `"dark" \| "light"`  | `'light'`     |
-| `observerRootMargin` | `observer-root-margin` | IntersectionObserver rootMargin property.                                                        | `string`             | `'640px 0px'` |
-| `observerThreshold`  | `observer-threshold`   | IntersectionObserver threshold property.                                                         | `number \| number[]` | `0.25`        |
-| `owllyId`            | `owlly-id`             | The ID to be provided to Owlly in order to load the initiative and other content for navigation. | `string`             | `undefined`   |
+| Property             | Attribute              | Description                                                                                                                            | Type                           | Default       |
+| -------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ | ------------- |
+| `customLang`         | `custom-lang`          | The browser lang is used per default. Use this option to overwrite the automatic detection and use the language you would like to use. | `"de" \| "en" \| "fr" \| "it"` | `undefined`   |
+| `mode`               | `mode`                 | Style the button with a dark or light theme?                                                                                           | `"dark" \| "light"`            | `'light'`     |
+| `observerRootMargin` | `observer-root-margin` | IntersectionObserver rootMargin property.                                                                                              | `string`                       | `'640px 0px'` |
+| `observerThreshold`  | `observer-threshold`   | IntersectionObserver threshold property.                                                                                               | `number \| number[]`           | `0.25`        |
+| `owllyId`            | `owlly-id`             | The ID to be provided to Owlly in order to load the initiative and other content for navigation.                                       | `string`                       | `undefined`   |
 
 
 ## Slots
