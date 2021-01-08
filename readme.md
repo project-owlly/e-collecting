@@ -13,6 +13,9 @@ This repository is all about the E-Collecting Button!
 This buttons is used by campaigners. To enable e-collecting, supported by owlly, simply add this line of code to your website:
 `<owlly-collect owlly-id="mkro4noxKW9CNGE7mGFE" mode="dark"></owlly-collect>`
 
+and this in your **`<head></head>`** of your website:
+`<script type="module" src='https://unpkg.com/@owlly/e-collecting@latest/dist/e-collecting/e-collecting.esm.js'></script>`
+
 ## Other owlly repositories
 
 **owlly** is a set of different repositories. Each for a specific purpose.
