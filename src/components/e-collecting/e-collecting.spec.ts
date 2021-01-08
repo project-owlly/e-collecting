@@ -118,4 +118,22 @@ describe('e-collecting', () => {
       </owlly-collect>
     `);
   });
+
+  it('renders with custom lang', async () => {
+    const {root} = await newSpecPage({
+      components: [ECollecting],
+      html: '<owlly-collect custom-lang="it"></owlly-collect>',
+    });
+    expect(root).toEqualHtml(`
+      <owlly-collect custom-lang="it" mode="light">
+        <mock:shadow-root>
+          ${mockStyleLight}
+          <button aria-label="firmare" disabled="" part="button">
+            <div aria-hidden="" class="logo"></div>
+            <slot>firmare</slot>
+          </button>
+        </mock:shadow-root>
+      </owlly-collect>
+    `);
+  });
 });
